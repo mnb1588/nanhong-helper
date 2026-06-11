@@ -943,7 +943,6 @@ function displayResults(rawContent) {
     color: { el: document.getElementById('colorValue'), label: '颜色等级' },
     quality: { el: document.getElementById('qualityValue'), label: '品质评级' },
     feature: { el: document.getElementById('featureValue'), label: '天然特征' },
-    price: { el: document.getElementById('priceValue'), label: '参考估价' },
   };
 
   // 尝试按行匹配
@@ -951,7 +950,6 @@ function displayResults(rawContent) {
     { key: 'color', re: /颜色等级[：:]\s*(.+)/ },
     { key: 'quality', re: /品质评级[：:]\s*(.+)/ },
     { key: 'feature', re: /天然特征[：:]\s*(.+)/ },
-    { key: 'price', re: /参考估价[：:]\s*(.+)/ },
   ];
 
   let matched = 0;
@@ -973,7 +971,6 @@ function displayResults(rawContent) {
     document.getElementById('colorValue').textContent = '解析异常，以下为AI原始回复：';
     document.getElementById('qualityValue').textContent = content.substring(0, 200);
     document.getElementById('featureValue').textContent = content.substring(200, 400) || '—';
-    document.getElementById('priceValue').textContent = content.substring(400) || '—';
   }
 
   // 显示结果
