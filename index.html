@@ -571,7 +571,7 @@
       <span class="upload-icon">📸</span>
       <div class="upload-text">拍照 / 上传南红图片</div>
       <div class="upload-hint">支持 <span>拍照</span> 或 <span>相册选图</span>，图片越清晰鉴定越准</div>
-      <input type="file" id="fileInput" accept="image/*" capture="environment" onchange="handleImageSelect(event)">
+      <input type="file" id="fileInput" accept="image/*" onchange="handleImageSelect(event)">
       <img class="preview-img" id="previewImg" alt="预览">
       <div class="preview-actions" id="previewActions">
         <button class="btn btn-outline" onclick="event.stopPropagation(); resetUpload()">重新选择</button>
