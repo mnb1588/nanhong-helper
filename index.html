@@ -655,9 +655,9 @@
 // ============================================================
 // 配置
 // ============================================================
-const API_URL = 'https://apihub.agnes-ai.com/v1/chat/completions';
-const API_KEY = 'sk-VrAi6hGDuZEaKCQ8XkGkR6KSzVaoSvc0z1od1hEdoaT7kDpo';  // ⚠️ 请替换为完整的 API Key
-const MODEL = 'agnes-2.0-flash';
+const API_URL = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
+const API_KEY = '13d77d74a8c14d828eb5eeb3bc43ea3e.uq2fRYhV2WJPgS7q';
+const MODEL = 'glm-4v-flash';
 const MAX_IMAGE_SIZE = 1024; // 图片最大边长
 
 // ============================================================
@@ -859,7 +859,7 @@ async function startAnalysis() {
 }
 
 // ============================================================
-// 调用 Agnes AI API
+// 调用智谱 GLM-4V API
 // ============================================================
 async function callAgnesAI(base64Image) {
   const controller = new AbortController();
@@ -876,15 +876,11 @@ async function callAgnesAI(base64Image) {
         model: MODEL,
         messages: [
           {
-            role: 'system',
-            content: SYSTEM_PROMPT,
-          },
-          {
             role: 'user',
             content: [
               {
                 type: 'text',
-                text: '请鉴定这张南红玛瑙图片，按照要求的格式给出鉴定结果。',
+                text: SYSTEM_PROMPT + '\n\n请鉴定这张南红玛瑙图片，按照要求的格式给出鉴定结果。',
               },
               {
                 type: 'image_url',
